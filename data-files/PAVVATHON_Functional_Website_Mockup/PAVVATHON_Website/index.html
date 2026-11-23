@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAVVATHON | Conquer The Quarter</title>
+<style>
+:root{--navy:#102b4e;--blue:#1674c8;--orange:#f47b20;--green:#269653;--ink:#172536;--muted:#627184;--pale:#f3f7fb;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{max-width:1160px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid #e7edf3}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:25px;font-weight:900;letter-spacing:1px;color:var(--navy)}.brand span{color:var(--orange)}
+.navlinks{display:flex;gap:23px;align-items:center;font-size:14px;font-weight:700;color:#43556a}.navlinks a:hover{color:var(--orange)}
+.btn{border:0;border-radius:999px;padding:13px 21px;background:var(--orange);color:#fff;font-weight:800;cursor:pointer;display:inline-block}.btn.blue{background:var(--blue)}.btn.outline{background:transparent;border:1.5px solid #fff;color:#fff}.btn:hover{filter:brightness(.95);transform:translateY(-1px)}
+.hero{background:linear-gradient(110deg,#0d294b 0%,#145b91 60%,#1780a1 100%);color:white;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:480px;height:480px;border:2px solid #ffffff20;border-radius:50%;right:-90px;top:-120px;box-shadow:0 0 0 45px #ffffff0b,0 0 0 90px #ffffff08}
+.hero-grid{min-height:550px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding-top:55px;padding-bottom:55px;position:relative;z-index:1}
+.kicker{color:#bde2ff;font-weight:800;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(43px,6vw,76px);line-height:.98;letter-spacing:-2px;margin:18px 0}.hero h1 em{font-style:normal;color:#ff9a4a}.hero p{font-size:18px;color:#e2eef8;max-width:560px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-art{height:360px;border-radius:28px;background:linear-gradient(145deg,#ffffff20,#ffffff08);border:1px solid #ffffff35;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.track{position:absolute;width:280px;height:280px;border:18px solid #ffffff25;border-radius:50%;transform:rotate(-25deg)}.track:after{content:"";position:absolute;inset:16px;border:3px dashed #ffffff8a;border-radius:50%}
+.hero-symbol{font-size:100px;z-index:1}.hero-label{position:absolute;bottom:25px;left:25px;font-weight:900;letter-spacing:3px;color:#fff}
+.stats{background:#fff;box-shadow:0 8px 30px #122b4510;position:relative;margin-top:-1px}.statrow{display:grid;grid-template-columns:repeat(4,1fr);padding:23px 0;text-align:center}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat small{color:var(--muted);font-weight:700}
+section{padding:82px 0}.section-head{text-align:center;max-width:720px;margin:0 auto 38px}.eyebrow{font-size:12px;letter-spacing:2.5px;font-weight:900;color:var(--orange)}h2{font-size:clamp(30px,4vw,43px);line-height:1.1;color:var(--navy);margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.pillar{border:1px solid #e4ebf2;border-radius:18px;padding:25px;background:#fff;box-shadow:0 8px 25px #102b4e08}.pillar .num{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--orange)}.pillar .icon{font-size:34px;margin:15px 0 8px}.pillar h3{margin:0 0 8px;color:var(--navy);font-size:19px}.pillar p{margin:0;color:var(--muted);font-size:14px}
+.events{background:var(--pale)}.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.event{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #e3eaf1}.event-top{height:130px;padding:22px;color:#fff;background:linear-gradient(120deg,var(--navy),var(--blue));display:flex;flex-direction:column;justify-content:space-between}.event:nth-child(2) .event-top{background:linear-gradient(120deg,#a94d16,var(--orange))}.event:nth-child(3) .event-top{background:linear-gradient(120deg,#17623c,var(--green))}.tag{font-size:11px;font-weight:900;letter-spacing:1.5px;opacity:.9}.event-top strong{font-size:24px}.event-body{padding:22px}.event-body p{color:var(--muted);font-size:14px}.event-body button{margin-top:8px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.storybox{background:var(--pale);border-radius:24px;padding:34px}.storybox .big{font-size:40px;font-weight:900;color:var(--orange);line-height:1}.storybox p{color:var(--muted)}
+.impact{background:#102b4e;color:white}.impact h2{color:white}.impact .section-head p{color:#c5d4e3}.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.impact-card{padding:25px;border:1px solid #ffffff30;border-radius:17px;background:#ffffff0b}.impact-card strong{font-size:30px;color:#ff9a4a;display:block}.impact-card p{color:#d0deea;margin-bottom:0}
+.updates{display:grid;grid-template-columns:1fr 1fr;gap:18px}.update{padding:24px;border-radius:16px;border:1px solid #e4ebf2}.update small{color:var(--green);font-weight:900;letter-spacing:1px}.update h3{color:var(--navy);margin:8px 0}.update p{color:var(--muted);margin:0}
+.cta{background:linear-gradient(110deg,#1674c8,#102b4e);color:white;text-align:center;padding:62px 20px}.cta h2{color:white}.cta p{color:#dceafa}
+footer{background:#091d35;color:#d7e3ee;padding:40px 0 22px}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot strong{font-size:22px;color:white}.foot p{color:#aebfd0;font-size:13px}.footlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}.copyright{border-top:1px solid #ffffff20;margin-top:28px;padding-top:17px;font-size:12px;color:#9eb0c2}
+.modal{display:none;position:fixed;inset:0;background:#07182bd9;z-index:30;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.dialog{background:#fff;border-radius:20px;padding:28px;width:min(560px,100%);max-height:90vh;overflow:auto}.dialog-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#eef3f8;border-radius:50%;width:34px;height:34px;font-size:20px;cursor:pointer}
+form{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}label{font-size:12px;font-weight:800;color:#43556a}input,select,textarea{width:100%;padding:12px;border:1px solid #d7e0e9;border-radius:9px;margin-top:5px;font:inherit}form .full{grid-column:1/-1}form button{grid-column:1/-1}.notice{font-size:12px;color:var(--muted)}.admin{padding:70px 0;background:#f6f8fb}.adminbox{background:#fff;border:1px solid #e0e7ef;border-radius:16px;padding:22px}.adminbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.admin input{max-width:230px}.tablewrap{overflow:auto;margin-top:15px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:10px;border-bottom:1px solid #e7edf3}th{color:var(--navy)}.hidden{display:none}
+@media(max-width:850px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-art{height:260px}.pillars{grid-template-columns:repeat(2,1fr)}.event-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.impact-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.statrow{grid-template-columns:repeat(2,1fr);gap:18px}.pillars,.event-grid,.updates,.impact-grid{grid-template-columns:1fr}section{padding:60px 0}.hero-grid{padding-top:48px}.hero-art{height:220px}.hero-symbol{font-size:75px}form{grid-template-columns:1fr}form .full,form button{grid-column:1}.foot{display:block}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home">PAVV<span>ATHON</span></a>
+<div class="navlinks"><a href="#pillars">Four Pillars</a><a href="#events">Events</a><a href="#story">Our Story</a><a href="#impact">Impact</a><a href="#updates">Updates</a></div>
+<a class="btn" href="#events">Join the Movement</a>
+</nav></div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="kicker">A COMMUNITY MOVEMENT</div><h1>CONQUER<br><em>THE QUARTER.</em></h1>
+<p>Run. Ride. Connect. Live Healthy. A movement bringing people together for healthier lives, stronger communities and a greener tomorrow.</p>
+<div class="hero-actions"><a class="btn" href="#events">Explore Events</a><a class="btn outline" href="#pillars">Discover Our Pillars</a></div></div>
+<div class="hero-art"><div class="track"></div><div class="hero-symbol">🏃‍♂️ 🚴</div><div class="hero-label">MOVE WITH PURPOSE</div></div>
+</div></section>
+<div class="stats"><div class="wrap statrow"><div class="stat"><strong>5.55 KM</strong><small>Half Pavvathon</small></div><div class="stat"><strong>11.11 KM</strong><small>Signature Distance</small></div><div class="stat"><strong>4</strong><small>Guiding Pillars</small></div><div class="stat"><strong>ONE</strong><small>Growing Community</small></div></div></div>
+
+<section id="pillars"><div class="wrap"><div class="section-head"><div class="eyebrow">WHAT GUIDES US</div><h2>Four Pillars. One Movement.</h2><p>Every PAVVATHON experience is shaped by four connected ideas that turn participation into positive change.</p></div>
+<div class="pillars">
+<article class="pillar"><div class="num">01 / CONNECT</div><div class="icon">🤝</div><h3>ENGAGE</h3><p>Bring people together through running, cycling, events and inclusive community participation.</p></article>
+<article class="pillar"><div class="num">02 / PARTICIPATE</div><div class="icon">🏃‍♀️</div><h3>EXPERIENCE</h3><p>Create memorable experiences through runs, rides, duathlons and shared challenges.</p></article>
+<article class="pillar"><div class="num">03 / GROW</div><div class="icon">💚</div><h3>ELEVATE</h3><p>Encourage healthier lifestyles, physical fitness, wellbeing and personal growth.</p></article>
+<article class="pillar"><div class="num">04 / CONTRIBUTE</div><div class="icon">🌱</div><h3>EMPOWER</h3><p>Give back to society and nature through community initiatives and a lasting green legacy.</p></article>
+</div></div></section>
+
+<section class="events" id="events"><div class="wrap"><div class="section-head"><div class="eyebrow">BE PART OF IT</div><h2>Move Your Way</h2><p>Start where you are. Choose your experience. Everyone is welcome.</p></div>
+<div class="event-grid">
+<article class="event"><div class="event-top"><span class="tag">RUN • COMMUNITY</span><strong>PAVVATHON RUN</strong></div><div class="event-body"><h3>Find Your Distance</h3><p>Choose 5.55 KM or 11.11 KM. Walk, jog or run at your own pace.</p><button class="btn blue" onclick="openRegister('Run – 5.55 / 11.11 KM')">Register Free</button></div></article>
+<article class="event"><div class="event-top"><span class="tag">RIDE • COMMUNITY</span><strong>PAVVATHON RIDE</strong></div><div class="event-body"><h3>Ride Together</h3><p>Enjoy community cycling, build confidence and discover new routes.</p><button class="btn" onclick="openRegister('Cycling Ride')">Register Free</button></div></article>
+<article class="event"><div class="event-top"><span class="tag">RUN + RIDE</span><strong>PAVVATHON DUATHLON</strong></div><div class="event-body"><h3>Challenge Yourself</h3><p>Combine running and cycling in a supportive, self-paced community event.</p><button class="btn blue" onclick="openRegister('Duathlon')">Register Free</button></div></article>
+</div></div></section>
+
+<section id="story"><div class="wrap split"><div><div class="eyebrow">OUR STORY</div><h2>It Starts With a Paav. It Grows Into a Movement.</h2><p>PAVVATHON takes inspiration from the Telugu word <b>Paav (పావు)</b> — a quarter. The idea is simple: meaningful journeys begin with a small step.</p><p>Our signature 11.11 KM distance gives people a welcoming challenge, while our wider movement brings together running, cycling, healthy living and community action.</p><p>We are not defined only by finish lines. We are defined by the people who show up, encourage one another and leave something good behind.</p><a class="btn blue" href="#events">Take Your First Step</a></div>
+<div class="storybox"><div class="big">MOVE.<br>GROW.<br>GIVE BACK.</div><p><b>Our promise</b><br>Healthier People. Stronger Communities. Greener Generations.</p><p><b>Our philosophy</b><br>Move with Purpose. Live with Passion. Leave a Legacy.</p></div></div></section>
+
+<section class="impact" id="impact"><div class="wrap"><div class="section-head"><div class="eyebrow">BEYOND THE FINISH LINE</div><h2>Progress That Gives Back</h2><p>Personal milestones matter. So does the positive impact we create together.</p></div>
+<div class="impact-grid"><div class="impact-card"><strong>Healthy Living</strong><p>Make everyday movement and wellbeing part of life.</p></div><div class="impact-card"><strong>Community</strong><p>Build connection across ages, abilities and experience levels.</p></div><div class="impact-card"><strong>Green Legacy</strong><p>Support tree plantation and care for the environment.</p></div></div></div></section>
+
+<section id="updates"><div class="wrap"><div class="section-head"><div class="eyebrow">FROM THE COMMUNITY</div><h2>Latest Updates</h2><p>Stories, announcements and moments from the PAVVATHON journey.</p></div>
+<div class="updates"><article class="update"><small>COMMUNITY • EVENT</small><h3>Run for the Next Generation</h3><p>Building healthy habits and bringing generations together through movement.</p></article><article class="update"><small>GREEN LEGACY</small><h3>Leave Footprints. Plant Roots.</h3><p>Our community believes every event can leave a positive mark beyond the route.</p></article></div></div></section>
+
+<section class="cta"><div class="wrap"><div class="eyebrow">YOUR JOURNEY STARTS HERE</div><h2>Small Steps. Shared Energy. Lasting Change.</h2><p>Come as you are. Be part of a community that moves forward together.</p><button class="btn" onclick="openRegister('Not sure yet – please contact me')">Join PAVVATHON – Free</button></div></section>
+</main>
+<footer><div class="wrap"><div class="foot"><div><strong>PAVVATHON</strong><p>Conquer The Quarter.<br>Engage • Experience • Elevate • Empower</p></div><div class="footlinks"><a href="#pillars">Four Pillars</a><a href="#events">Events</a><a href="#story">About</a><a href="#impact">Impact</a><a href="mailto:support@pavvathon.in">Contact</a></div></div><div class="copyright">© <span id="year"></span> PAVVATHON. A community movement. <a href="#admin" style="float:right">Admin demo</a></div></div></footer>
+
+<section class="admin" id="admin"><div class="wrap"><div class="section-head"><div class="eyebrow">DEMO ONLY</div><h2>Registration Admin</h2><p>Local browser preview of the registration list. This is not a secure production admin system.</p></div>
+<div class="adminbox"><div class="adminbar"><input id="adminpass" type="password" placeholder="Demo password"><button class="btn blue" onclick="showAdmin()">View registrations</button><button class="btn" onclick="exportCSV()">Export CSV</button></div><p class="notice">Demo password: <b>pavvathon-demo</b>. Registrations are stored only in this browser.</p><div id="adminresults" class="hidden"><div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Activity</th><th>Phone</th><th>Submitted</th></tr></thead><tbody id="regrows"></tbody></table></div></div><p id="adminmsg" class="notice"></p></div></div></section>
+
+<div class="modal" id="regmodal"><div class="dialog"><div class="dialog-head"><div><div class="eyebrow">FREE PARTICIPANT REGISTRATION</div><h2 style="font-size:27px;margin:5px 0">Join PAVVATHON</h2></div><button class="close" onclick="closeRegister()">×</button></div>
+<form id="regform">
+<div><label>Full name *</label><input name="name" required placeholder="Your name"></div><div><label>Mobile number *</label><input name="phone" required type="tel" placeholder="Your mobile"></div>
+<div><label>Email *</label><input name="email" required type="email" placeholder="you@example.com"></div><div><label>Activity *</label><select name="activity" id="activity" required><option value="">Select activity</option><option>Run – 5.55 / 11.11 KM</option><option>Cycling Ride</option><option>Duathlon</option><option>Volunteer</option><option>Not sure yet – please contact me</option></select></div>
+<div class="full"><label>Anything you'd like us to know? (optional)</label><textarea name="notes" rows="3" placeholder="Your message"></textarea></div>
+<div class="full notice">By submitting, you agree that the event team may contact you about PAVVATHON activities. This demo stores your entry locally in this browser only.</div>
+<button class="btn" type="submit">Submit Free Registration</button></form><p id="regmessage" class="notice"></p></div></div>
+<script>
+const KEY='pavvathon_demo_registrations';
+document.getElementById('year').textContent=new Date().getFullYear();
+function openRegister(activity){document.getElementById('regmodal').classList.add('show');if(activity)document.getElementById('activity').value=activity}
+function closeRegister(){document.getElementById('regmodal').classList.remove('show')}
+document.getElementById('regmodal').addEventListener('click',e=>{if(e.target.id==='regmodal')closeRegister()});
+document.getElementById('regform').addEventListener('submit',e=>{
+ e.preventDefault();const data=Object.fromEntries(new FormData(e.target).entries());data.submitted=new Date().toLocaleString();
+ const rows=JSON.parse(localStorage.getItem(KEY)||'[]');rows.push(data);localStorage.setItem(KEY,JSON.stringify(rows));
+ document.getElementById('regmessage').textContent='Thank you! Your demo registration has been saved in this browser. This is not a live submission.';
+ e.target.reset();setTimeout(closeRegister,1800);
+});
+function showAdmin(){if(document.getElementById('adminpass').value!=='pavvathon-demo'){document.getElementById('adminmsg').textContent='Incorrect demo password.';return}
+ const rows=JSON.parse(localStorage.getItem(KEY)||'[]');document.getElementById('regrows').innerHTML=rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.email)}</td><td>${esc(r.activity)}</td><td>${esc(r.phone)}</td><td>${esc(r.submitted)}</td></tr>`).join('')||'<tr><td colspan="5">No registrations in this browser yet.</td></tr>';
+ document.getElementById('adminresults').classList.remove('hidden');document.getElementById('adminmsg').textContent=rows.length+' registration(s) found.';
+}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function exportCSV(){const rows=JSON.parse(localStorage.getItem(KEY)||'[]');if(!rows.length){document.getElementById('adminmsg').textContent='No registrations to export.';return}
+ const cols=['name','phone','email','activity','notes','submitted'];const csv=[cols.join(','),...rows.map(r=>cols.map(c=>'"'+String(r[c]||'').replace(/"/g,'""')+'"').join(','))].join('\\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='pavvathon-demo-registrations.csv';a.click();URL.revokeObjectURL(a.href);
+}
+</script>
+</body></html>
